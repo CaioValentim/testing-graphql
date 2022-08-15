@@ -1,15 +1,29 @@
-import { Query } from '@nestjs/common';
-import { ResolveField, Resolver } from '@nestjs/graphql';
-import { UserDTO } from './dto/user.dto';
+import { Resolver, Query, ResolveField, Parent } from '@nestjs/graphql';
+import { UserDTO } from '../dto/user.dto';
+import { plainToClass } from 'class-transformer';
+import { AddressDTO } from '../dto/address.dto';
 @Resolver(() => UserDTO)
 export class UserResolver {
-  @Query(() => UserDTO, { name: 'listUsers' })
-  async list(): Promise<UserDTO[]> {
-    return [new UserDTO()];
+  @Query(() => UserDTO)
+  async userWithStaticAddress(): Promise<UserDTO> {
+    const userDTO = plainToClass(UserDTO, {
+      name: 'Jon Doe',
+      addresses: [plainToClass(AddressDTO, { street: 'street' })],
+    });
+    return userDTO;
   }
 
-  @ResolveField('address', () => [BidDTO])
-  async getEventBids(@Parent() event: EventEntity): Promise<BidEntity[]> {
-    return await this.bidService.list({ event });
+  @Query(() => UserDTO)
+  async userWithDynamicAddress(): Promise<UserDTO> {
+    const userDTO = plainToClass(UserDTO, { name: 'My name' });
+    return userDTO;
+  }
+
+  @ResolveField('addresses', () => AddressDTO)
+  async getDynamicAddress(@Parent() userDTO: UserDTO): Promise<AddressDTO> {
+    const calculatedAddress = plainToClass(AddressDTO, {
+      street: `${userDTO.name} street`,
+    });
+    return calculatedAddress;
   }
 }
