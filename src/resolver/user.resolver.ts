@@ -19,7 +19,7 @@ export class UserResolver {
     return userDTO;
   }
 
-  @ResolveField('addresses', () => AddressDTO)
+  @ResolveField('address', () => AddressDTO)
   async getDynamicAddress(@Parent() userDTO: UserDTO): Promise<AddressDTO> {
     const calculatedAddress = plainToClass(AddressDTO, {
       street: `${userDTO.name} street`,
