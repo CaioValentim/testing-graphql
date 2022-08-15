@@ -7,5 +7,5 @@ export class UserDTO {
   name: string;
 
   @Field(() => AddressDTO)
-  addresses: AddressDTO;
+  address: AddressDTO;
 }

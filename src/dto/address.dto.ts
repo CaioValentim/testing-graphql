@@ -1,6 +1,6 @@
 import { Field, ObjectType } from '@nestjs/graphql';
 
-@ObjectType('Addresses')
+@ObjectType('Address')
 export class AddressDTO {
   @Field()
   street: string;
