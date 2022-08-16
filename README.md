@@ -6,7 +6,7 @@ Data flow control issue with graphql.
 
 That repository contains a user Resolver File, and this file is a Class with three methods.
 
-This example repository tries to build a user in a different way using Query and ResolverField.
+This example repository tries to build a user in a different way using Query and ResolveField.
 
 1 - Query userWithStaticAddress (that should just create a static user with a static address)
 
