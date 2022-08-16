@@ -13,13 +13,13 @@ This example repository tries to build a user in a different way using Query and
 2 - Query userWithDynamicAddress (that should create but not create address object)
 
 3 - ResolveField getDynamicAddress (that should be used to build dynamic address), and I would like to trigger this
-method just when the data flow comes from Query userWithDynamicAddress
+method just when the data flow comes from Query userWithDynamicAddress.
 
 Besides that, it looks like I cannot use parent args inside a resolveField.
 
 # Query examples
 
-You can use playground on this project and that is already setted;
+You can use playground on this project, and that is already set.
 
 -------------------------------------------------------
 
