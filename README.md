@@ -4,7 +4,7 @@ Data flow control issue with graphql.
 
 ## Description
 
-That repository contains a user Resolver File, and this file is a Class with tree methods.
+That repository contains a user Resolver File, and this file is a Class with three methods.
 
 This example repository tries to build a user in a different way using Query and ResolverField.
 
