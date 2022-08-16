@@ -10,7 +10,7 @@ This example repository tries to build a user in a different way using Query and
 
 1 - Query userWithStaticAddress (that should just create a static user with a static address)
 
-2 - Query userWithDynamicAddress (that should create but not create address object)
+2 - Query userWithDynamicAddress (that should createuser with dynamic custom address)
 
 3 - ResolveField getDynamicAddress (that should be used to build dynamic address), and I would like to trigger this
 method just when the data flow comes from Query userWithDynamicAddress.
