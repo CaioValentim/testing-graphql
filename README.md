@@ -4,9 +4,9 @@ Data flow control issue with graphql.
 
 ## Description
 
-1 - How to control the data flow to resolveField?
+* How to control the data flow to resolveField?
 
-2 - How to access args inside a resolveField?
+* How to access args inside a resolveField?
 
 That repository contains a user Resolver File, and this file is a Class with three methods.
 
